@@ -3,10 +3,9 @@ import 'package:flutter/foundation.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class ApiClient {
- String baseUrl;
+  String baseUrl;
   Dio dio;
-  ApiClient(this.baseUrl)
-    : dio = Dio(BaseOptions(baseUrl:baseUrl)) {
+  ApiClient(this.baseUrl) : dio = Dio(BaseOptions(baseUrl: baseUrl)) {
     dio.interceptors.add(
       PrettyDioLogger(
         requestHeader: true,
