@@ -150,6 +150,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       });
                                       context.read<HomeCubit>().LoadProducts(
                                         category[index].id,
+                                        0,
                                       );
                                     },
                                   ),

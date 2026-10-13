@@ -18,11 +18,13 @@ class HomeServices {
     return categories;
   }
 
-  Future<List<ProductModel>> getProducts(int categoryId) async {
+  Future<List<ProductModel>> getProducts(int categoryId, int offSet) async {
     List data;
     final Response<dynamic> response;
     if (categoryId == -1) {
-      response = await apiClient.dio.get(ApiEndPoints.products);
+      response = await apiClient.dio.get(
+        "${ApiEndPoints.products}?limit=20&offset=$offSet",
+      );
       data = response.data;
     } else {
       response = await apiClient.dio.get(

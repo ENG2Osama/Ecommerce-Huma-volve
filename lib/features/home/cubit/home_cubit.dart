@@ -15,7 +15,7 @@ class HomeCubit extends Cubit<HomeState> {
       isCategoriesLoaded = true;
       emit(categoriesSuccessState(categories));
 
-      LoadProducts(-1);
+      LoadProducts(-1, 0);
     } catch (e) {
       if (!isCategoriesLoaded) {
         emit(categoriesErrorState(e.toString()));
@@ -25,10 +25,10 @@ class HomeCubit extends Cubit<HomeState> {
     }
   }
 
-  Future<void> LoadProducts(int categoryId) async {
+  Future<void> LoadProducts(int categoryId, int offSet) async {
     emit(productsLoadedState());
     try {
-      final products = await homeServices.getProducts(categoryId);
+      final products = await homeServices.getProducts(categoryId, offSet);
       emit(productsSuccessState(products));
     } catch (e) {
       emit(productsErrorState(e.toString()));
