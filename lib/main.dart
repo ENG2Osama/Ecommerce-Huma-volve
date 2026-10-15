@@ -1,5 +1,6 @@
 import 'package:ecommerce_app_huma_volve/core/constant/api_constant.dart';
 import 'package:ecommerce_app_huma_volve/core/netWork/api_client.dart';
+import 'package:ecommerce_app_huma_volve/core/theme.dart';
 import 'package:ecommerce_app_huma_volve/features/auth/Data/data_source/auth_remote_data_source.dart';
 import 'package:ecommerce_app_huma_volve/features/auth/Data/data_source/auth_remote_data_source_im.dart';
 import 'package:ecommerce_app_huma_volve/features/auth/Data/repository/auth_repository_im.dart';
@@ -17,11 +18,9 @@ import 'package:ecommerce_app_huma_volve/features/home/Domian/use_case/get_cater
 import 'package:ecommerce_app_huma_volve/features/home/Domian/use_case/get_product_use_case.dart';
 import 'package:ecommerce_app_huma_volve/features/home/presentation/view/home_screen.dart';
 import 'package:ecommerce_app_huma_volve/features/home/presentation/view_model/home_cubit.dart';
+import 'package:ecommerce_app_huma_volve/features/splash/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import 'core/theme.dart';
-import 'features/splash/screens/splash_screen.dart';
 
 void main() {
   runApp(MyApp());

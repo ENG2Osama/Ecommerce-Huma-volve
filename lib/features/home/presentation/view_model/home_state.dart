@@ -8,30 +8,38 @@ class HomeInitialState extends HomeState {}
 
 class HomeLoadingState extends HomeState {}
 
-class categoriesLoadedState extends HomeState {}
+class CategoriesLoadedState extends HomeState {}
 
-class categoriesErrorState extends HomeState {
+class CategoriesErrorState extends HomeState {
   final String errorMessage;
 
-  categoriesErrorState(this.errorMessage);
+  CategoriesErrorState(this.errorMessage);
 }
 
-class categoriesSuccessState extends HomeState {
+class CategoriesSuccessState extends HomeState {
   final List<HomeCategoryEntity> categories;
 
-  categoriesSuccessState(this.categories);
+  CategoriesSuccessState(this.categories);
 }
 
-class productsLoadedState extends HomeState {}
+class ProductsLoadedState extends HomeState {}
 
-class productsErrorState extends HomeState {
+class ProductsErrorState extends HomeState {
   final String errorMessage;
 
-  productsErrorState(this.errorMessage);
+  ProductsErrorState(this.errorMessage);
 }
 
-class productsSuccessState extends HomeState {
+class ProductsSuccessState extends HomeState {
   final List<HomeProductEntity> products;
 
-  productsSuccessState(this.products);
+  ProductsSuccessState(this.products);
+}
+
+class MoreProductsLoadedState extends HomeState {}
+
+class MoreProductsErrorState extends HomeState {
+  final String errorMessage;
+
+  MoreProductsErrorState(this.errorMessage);
 }

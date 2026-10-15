@@ -20,7 +20,7 @@ class ProductCard extends StatelessWidget {
           PageRouteBuilder(
             transitionDuration: const Duration(milliseconds: 500),
             pageBuilder: (context, animation, secondaryAnimation) =>
-                ProductDetailsScreen(product: dummyProducts.first),
+                ProductDetailsScreen(product: product),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {
                   return FadeTransition(opacity: animation, child: child);
@@ -55,6 +55,12 @@ class ProductCard extends StatelessWidget {
                         top: Radius.circular(24),
                       ),
                       child: Image.network(
+                        loadingBuilder: (context, child, loadingProgress) {
+                          if (loadingProgress == null) return child;
+                          return Center(child: CircularProgressIndicator());
+                        },
+                        errorBuilder: (context, error, stackTrace) =>
+                            Center(child: Icon(Icons.broken_image, size: 50)),
                         product.images![0],
                         fit: BoxFit.cover,
                         width: double.infinity,

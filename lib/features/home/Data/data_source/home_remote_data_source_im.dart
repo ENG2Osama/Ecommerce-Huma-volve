@@ -25,12 +25,13 @@ class HomeRemoteDataSourceIm implements HomeRemoteDataSource {
     final Response<dynamic> response;
     if (categoryId == -1) {
       response = await apiClient.dio.get(
-        "${ApiEndPoints.products}?limit=20&offset=$offSet",
+        "${ApiEndPoints.products}?limit=10&offset=$offSet",
       );
       data = response.data;
     } else {
       response = await apiClient.dio.get(
         "${ApiEndPoints.categories}/$categoryId/${ApiEndPoints.products}",
+        queryParameters: {"limit": 10, "offset": offSet},
       );
     }
     data = response.data;
