@@ -20,7 +20,7 @@ class ProductCard extends StatelessWidget {
           PageRouteBuilder(
             transitionDuration: const Duration(milliseconds: 500),
             pageBuilder: (context, animation, secondaryAnimation) =>
-                ProductDetailsScreen(product: product),
+                ProductDetailsScreen(productId: product.id),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {
                   return FadeTransition(opacity: animation, child: child);

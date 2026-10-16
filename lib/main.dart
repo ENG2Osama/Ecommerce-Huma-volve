@@ -1,5 +1,6 @@
 import 'package:ecommerce_app_huma_volve/core/constant/api_constant.dart';
 import 'package:ecommerce_app_huma_volve/core/netWork/api_client.dart';
+import 'package:ecommerce_app_huma_volve/core/router/router_app.dart';
 import 'package:ecommerce_app_huma_volve/core/theme.dart';
 import 'package:ecommerce_app_huma_volve/features/auth/Data/data_source/auth_remote_data_source.dart';
 import 'package:ecommerce_app_huma_volve/features/auth/Data/data_source/auth_remote_data_source_im.dart';
@@ -68,11 +69,11 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => _authCubit, child: LoginScreen()),
         BlocProvider(create: (context) => _homeCubit, child: HomeScreen()),
       ],
-      child: MaterialApp(
+      child: MaterialApp.router(
+        routerConfig: gotrouter,
         title: 'E-Commerce App',
         debugShowCheckedModeBanner: false,
         theme: AppTheme.lightTheme,
-        home: const SplashScreen(),
       ),
     );
   }
